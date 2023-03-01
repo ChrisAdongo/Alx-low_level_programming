@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * string_toupper - Changes the lowercase letters of string to uppercase.
+ * string_toupper - Changes lowercase letters of string to uppercase.
  * @str: The string to be converted.
  *
  * Return: A pointer to the converted string.
