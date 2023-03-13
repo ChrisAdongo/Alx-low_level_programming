@@ -16,30 +16,27 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	
-	/* calculate length of concatenated string */
 	for (i = 0; i < ac; i++)
     	{
 		for (j = 0; av[i][j] != '\0'; j++)
+			len++;
 		len++;
-		len++; /* add space for newline character */
 	}
-	/* allocate memory for concatenated string */
 	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 	return (NULL);
 
-	/* copy arguments to concatenated string */
 	for (i = 0; i < ac; i++)
 	{
-	for (j = 0; av[i][j] != '\0'; j++)
-	{
-		str[k] = av[i][j];
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			str[k] = av[i][j];
+			k++;
+        	}
+		str[k] = '\n';
 		k++;
-        }
-	str[k] = '\n'; /* add newline character */
-	k++;
 	}
-	str[k] = '\0'; /* add null terminator */
+	str[k] = '\0';
 
 	return (str);
 }
