@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <unistd.h>
 
 /**
  * _isdigit - checks if a character is a digit
@@ -41,7 +40,7 @@ int main(int argc, char **argv)
 	
 	if (argc != 3)
 	{
-		write(2, "Error\n", 6);
+		printf("Error\n");
 		exit(98);
 	}
 	len1 = _strlen(argv[1]);
@@ -51,7 +50,7 @@ int main(int argc, char **argv)
 	{
 		if (!_isdigit(argv[1][i]))
 		{
-			write(2, "Error\n", 6);
+			printf("Error\n");
 			exit(98);
 		}
 	}
@@ -59,7 +58,7 @@ int main(int argc, char **argv)
 	{
 		if (!_isdigit(argv[2][i]))
 		{
-			write(2, "Error\n", 6);
+			printf("Error\n");
 			exit(98);
 		}
 	}
