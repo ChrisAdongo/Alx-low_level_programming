@@ -13,7 +13,7 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void add_nums(char *next_product, char *final_product, int next_len);
-int main(int argc, char *argv[]);
+/*int main(int argc, char *argv[]);*/
 void get_product(char *prod, char *mul, int digit, int zeroes);
 
 #endif
