@@ -1,6 +1,5 @@
-#include <stdio.h>
+#include "dog.h"
 #include <stdlib.h>
-#include <string.h>
 
 typedef struct dog
 {
@@ -41,5 +40,5 @@ dog_t *new_dog(char *name, float age, char *owner)
 		strcpy(dog->owner, owner);
 
 		dog->age = age;
-	return dog;
+	return (dog);
 }
