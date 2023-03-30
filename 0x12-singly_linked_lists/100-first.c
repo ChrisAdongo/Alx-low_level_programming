@@ -1,9 +1,13 @@
 #include <stdio.h>
 
-void __attribute__((constructor)) print_first(void);
+/**
+ * print_first - Apply the constructor attribute to print_first
+ *		to execute before main().
+ */
+void print_first(void) __attribute__((constructor));
 
 /**
- * first - Prints a sentence before the main
+ * print_first - Prints a sentence before the main
  *          function is executed
  */
 void print_first(void)
