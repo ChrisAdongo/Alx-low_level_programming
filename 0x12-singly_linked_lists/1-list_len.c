@@ -6,7 +6,6 @@
 /**
  * list_len - Returns the number of elements in a linked list.
  * @h: Pointer to list_t list.
- * @nodes: a counter var for size_t (nodes)
  *
  * Return: The number of elements in h.
  */
