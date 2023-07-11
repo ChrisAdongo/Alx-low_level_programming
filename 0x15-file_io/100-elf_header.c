@@ -59,8 +59,10 @@ void print_error(const char *message)
  */
 void print_elf_header(const ELFHeader *header)
 {
+	int i;
+
 	printf("Magic: ");
-	for (int i = 0; i < ELF_MAGIC_SIZE; i++)
+	for (i = 0; i < ELF_MAGIC_SIZE; i++)
 	{
 		printf("%02x ", header->magic[i]);
 	}
@@ -86,20 +88,25 @@ void print_elf_header(const ELFHeader *header)
  */
 int main(int argc, char *argv[])
 {
+	const char *filename;
+	int fd;
+	ELFHeader header;
+	ssize_t bytes_read;
+
 	if (argc != 2)
 	{
 		print_error("Invalid number of arguments");
 	}
-	const char *filename = argv[1];
-	int fd = open(filename, O_RDONLY);
+
+	filename = argv[1];
+	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
 	{
 		print_error("Unable to open file");
 	}
 
-	ELFHeader header;
-	ssize_t bytes_read = read(fd, &header, sizeof(ELFHeader));
+	bytes_read = read(fd, &header, sizeof(ELFHeader));
 
 	if (bytes_read != sizeof(ELFHeader))
 	{
