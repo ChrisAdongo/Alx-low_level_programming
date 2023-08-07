@@ -11,16 +11,16 @@ void stop_f(int o);
  * @argv: Array of pointers to the arguments.
  *
  * Description: If argument count is incorrect - exit with code 97.
- *              If file_to can't be written to or created - exit with code 99.
- *              If file_from does not exist or cannot be read - exit with code 98.
- *              If file_to or file_from can't be closed - exit with code 100.
+ * If file_to can't be written to or created - exit with code 99.
+ * If file_from does not exist or cannot be read - exit with code 98.
+ * If file_to or file_from can't be closed - exit with code 100.
  *
  * Return: 0 on success.
  */
 int main(int argc, char *argv[])
 {
 	int f;
-	int t; 
+	int t;
 	int r;
 	int w;
 	char *b;
